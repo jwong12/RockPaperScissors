@@ -32,12 +32,16 @@ button.onclick = function() {
 }
 
 function runGame() {
+    let displayPicBool = false;
     let playerSelection;
     response = prompt("Rock, Paper or Scissors?");
 
     if(response !== "" && response !== null) {
         playerSelection = response.charAt(0).toUpperCase() + response.slice(1).toLowerCase();
-        displayPlayerPic(playerSelection);
+
+        if(playerSelection === ROCK_CHOICE || playerSelection === PAPER_CHOICE || playerSelection === SCISSORS_CHOICE) {
+            displayPicBool = true;
+        }
 
     } else {
         playerSelection = null;
@@ -45,9 +49,13 @@ function runGame() {
 
     let computerSelection = computerPlay();
     roundResult.textContent = playRound(playerSelection, computerSelection);
-    displayComputerPic(computerSelection);
     playerNode.textContent = playerScore;
     computerNode.textContent = computerScore;
+
+    if(displayPicBool === true) {
+        displayPlayerPic(playerSelection);
+        displayComputerPic(computerSelection);
+    }
 }
 
 function displayPlayerPic(playerSelection) {
@@ -99,11 +107,11 @@ function displayComputerPic(computerSelection) {
 }
 
 function checkWin() {
-    if(playerScore === 2) {
+    if(playerScore === 3) {
         endMessage.textContent = "Congratulations! You won.";
         createResetBut();
 
-    } else if(computerScore === 2) {
+    } else if(computerScore === 3) {
         endMessage.textContent = "Oh no... You lost. Try again?";
         createResetBut();
     }
