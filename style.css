@@ -1,0 +1,51 @@
+body {
+ background-color: blanchedalmond;
+}
+
+body h1 {
+    width: 500px;
+    text-align: center;
+}
+
+#canvas {
+    width: 500px;
+    text-align: center;
+}
+
+#roundResult {
+    font: "oblique 20px serif";
+    color: DodgerBlue;
+    margin: 10px;
+}
+
+#gameDisplay {
+    display: inline-block;
+    height: 150px;
+}
+
+#playerDiv {
+    display: inline-block;
+    font-size: 20px;
+    margin: 10px;
+}
+
+#playerDiv h2 {
+    margin: 20px;
+}
+
+#computerDiv {
+    display: inline-block;
+    font-size: 20px;
+    margin: 10px;
+}
+
+#computerDiv h2 {
+    margin: 20px;
+}
+
+#playButton {
+    height: 40px;
+    width: 100px;
+    margin: 10px;
+    color: DodgerBlue;
+}
